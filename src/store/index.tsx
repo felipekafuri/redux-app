@@ -1,13 +1,14 @@
 import { createStore } from 'redux';
 import { ICartState } from './modules/cart/types';
 import { combinedReducers } from './modules/rootReducer';
+import { composeWithDevTools } from 'redux-devtools-extension'
 
 
 export interface IState {
   cart: ICartState;
 }
 
-const store = createStore(combinedReducers);
+const store = createStore(combinedReducers, composeWithDevTools());
 
 
 export { store }
